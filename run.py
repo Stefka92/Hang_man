@@ -23,5 +23,17 @@ def play_game(words):
     print("MY life depends on you.... No pressure\n")
     print(display_hangman_lives(tries))
     print(completed_word)
+    while not guessed and tries > 0:
+        guess = input ("Please guess a letter").upper()
+        if len(guess) == 1 and guess.isalpha():
+            if guess in guessed_letters:
+                print("WHoops it looks like you have already guessed that please try again")
+
+        elif len('guess') == len('word') and guess.isalpha():
+
+        else:
+            print("Not valid try again\n")
+            print(display_hangman_lives(tries))
+            print(completed_word)
     
 
