@@ -4,12 +4,21 @@ importing the random words from words.py file
 import random
 from words import words
 
+def create_username():
+    name = input("Enter your name: ")
+    username = name.lower() 
+    return username
+
+username = create_username()
+print("Welcome:", username)
+
+
 def hangman(words):
     """
     declaring the function hangman and passing word as a argument
     """
 
-    wrong = 0 # declaring wrong and settingas 0
+    wrong = 0  # declaring wrong and settingas 0
     stages = [
         "",
      "________        ",
@@ -21,10 +30,10 @@ def hangman(words):
      "|               "
      ]
     
-     rletters = list(word)
-    board = ["_"] * len(word)
+    rletters = list(words)
+    board = ["_"] * len(words)
     win = False
-    print("Welcome to Hangman, My life depends on you...\N")   # displaying the message to the user 
+    print("Welcome to Hangman, My life depends on you...\n")   # displaying the message to the user 
     guesses = []
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
@@ -41,17 +50,22 @@ def hangman(words):
             rletters[cind] = '$'
         else:  # if the character is not in the rletters then 
             wrong += 1   # update the wrong value by 1 
-        print((" ".join(board))
+        print((" ".join(board)))
         print("Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1))   # printing the attempts remaining
         print("Previous Guesses: {}".format(guesses))  # displaying the Previous guesses by the user 
         e = wrong + 1
         print("\n".join(stages[0: e]))
         if "_" not in board:  # if _ is not in board then print 
-            print("You win!")  # telling to the user that he or she won 
+            print("You win!")  # telling to the user that they won 
             print(" ".join(board))
             win = True
             break
     if not win:  # if out of guesses show correct answer 
         print("\n".join(stages[0: wrong]))
-        print("You lose! It was {}.".format(word))
+        print("You lose! It was {}.".format(words))
+
+
+words = random.choice(words)
+hangman(words)
+print(username)
     
