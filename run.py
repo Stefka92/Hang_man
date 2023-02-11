@@ -4,10 +4,15 @@ importing the random words from words.py file
 import random
 from words import words
 
+
 def create_username():
+    """
+    allows user to create a username
+    """
     name = input("Enter your name: ")
     username = name.lower() 
     return username
+
 
 username = create_username()
 print("Welcome:", username)
@@ -39,6 +44,11 @@ def hangman(words):
         print("\n")
         msg = "Please guess a letter: "   # asking the user to guess a letter 
         char = input(msg)   # getting the guessed letter as a input 
+
+        if not char.isalpha() or len(char) != 1:
+            print("Invalid input. Please enter a single letter")
+            continue
+
         if char in guesses:   # if the entered char matches with the word then, 
             print("Whoops you already guessed the letter '{}', try again.".format(char))
             continue
