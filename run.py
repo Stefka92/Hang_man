@@ -38,24 +38,35 @@ def hangman(words):
     rletters = list(words)
     board = ["_"] * len(words)
     win = False
-    hint_used = False
     print("Welcome to Hangman, My life depends on you...\n")   # displaying the message to the user 
     guesses = []
+    hint_used = False
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
-        msg = "Please guess a letter"  # asking the user to guess a letter 
-        if not hint_used:
-            msg += ", type 'hint' for a hint: "
-        char = input(msg)   # getting the guessed letter as a input 
-    
-        if not hint_used and char == "hint":
-            hint = [l for l in rletters if l not in guesses]
-            print("Here's a hint: one of the letters not yet guessed is '{}'".format(hint[0]))
-            hint_used = True
+        msg = "Please guess a letter, type 'hint' for a hint, or guess the word: "  # asking the user to guess a letter 
+        char = input(msg)   # getting the guessed letter as a input
+
+        if char == "hint":
+            if not hint_used:
+                hint = [l for l in rletters if l not in guesses]
+                print("Here's a hint: one of the letters not yet guessed is '{}'".format(hint[0]))
+                hint_used = True
+                continue
+            else:
+                print("The hint has already been used.")
+                continue
+
+        if char == words:
+            print("congratulations! You guessed correctly")
+            win = True
+            break
+
+        if not char.isalpha():
+            print("Invalid input. Please enter a single letter, the word, or 'hint'.")
             continue
 
-        if not char.isalpha() or len(char) != 1:
-            print("Invalid input. Please enter a single letter")
+        if len(char) > 1 and char != words:
+            print("Invalid input. Please enter a single letter, the word, or 'hint'.")
             continue
 
         if char in guesses:   # if the entered char matches with the word then, 
