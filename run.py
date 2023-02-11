@@ -51,4 +51,7 @@ def hangman(words):
             print(" ".join(board))
             win = True
             break
+    if not win:  # if out of guesses show correct answer 
+        print("\n".join(stages[0: wrong]))
+        print("You lose! It was {}.".format(word))
     
