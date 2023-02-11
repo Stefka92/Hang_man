@@ -1,6 +1,8 @@
-import random 
-from words import random_words
-
+"""
+importing the random words from words.py file
+"""
+import random
+from words import words
 
 def get_words():
     """

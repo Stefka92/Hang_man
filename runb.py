@@ -1,10 +1,11 @@
 """
-importing the package for the program
+importing the random words from words.py file
 """
 import random
+from words import words
 
 
-def hangman(word):
+def hangman(words):
     """
     declaring the function hangman and passing word as a argument
     """
@@ -55,8 +56,8 @@ def hangman(word):
         print("You lose! It was {}.".format(word))   
 
 #  number of words declared 
-words = ["python", "java", "kotlin", "javascript", "ruby", "c++", "c#", "swift", "go", "scala",
-         "php", "perl", "r", "matlab", "julia", "groovy", "objective-c", "rust", "dart", "elixir"]
+# words = ["python", "java", "kotlin", "javascript", "ruby", "c++", "c#", "swift", "go", "scala",
+#          "php", "perl", "r", "matlab", "julia", "groovy", "objective-c", "rust", "dart", "elixir"]
 
 word = random.choice(words)
 hangman(word)

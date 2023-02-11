@@ -1,4 +1,4 @@
-random_words = [
+words = [
     'Farm',
     'Fiddle',
     'Evangelical',
