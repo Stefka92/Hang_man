@@ -46,7 +46,7 @@ def hangman(words):
         msg = "Please guess a letter, type 'hint' for a hint, or guess the word: "  # asking the user to guess a letter 
         char = input(msg)   # getting the guessed letter as a input
 
-        if char == "hint":
+        if char == "hint": # provides a hint to the user
             if not hint_used:
                 hint = [l for l in rletters if l not in guesses]
                 print("Here's a hint: one of the letters not yet guessed is '{}'".format(hint[0]))
@@ -56,12 +56,12 @@ def hangman(words):
                 print("The hint has already been used.")
                 continue
 
-        if char == words:
+        if char == words: # if you guess the correct word
             print("congratulations! You guessed correctly")
             win = True
             break
 
-        if not char.isalpha():
+        if not char.isalpha(): # if the entered char is not a letter
             print("Invalid input. Please enter a single letter, the word, or 'hint'.")
             continue
 
