@@ -42,8 +42,13 @@ def hangman(words):
     guesses = []
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
-        msg = "Please guess a letter: "   # asking the user to guess a letter 
+        msg = "Please guess a letter, type 'hint' for a hint: : "   # asking the user to guess a letter 
         char = input(msg)   # getting the guessed letter as a input 
+    
+        if char == "hint":
+            hint = [l for l in rletters if l not in guesses]
+            print("Here's a hint: one of the letters not yet guessed is '{}'".format(hint[0]))
+        # continue
 
         if not char.isalpha() or len(char) != 1:
             print("Invalid input. Please enter a single letter")
