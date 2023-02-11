@@ -28,10 +28,10 @@ def hangman(words):
     guesses = []
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
-        msg = "Guess a letter: "   # asking the user to guess a letter 
+        msg = "Please guess a letter: "   # asking the user to guess a letter 
         char = input(msg)   # getting the guessed letter as a input 
         if char in guesses:   # if the entered char matches with the word then, 
-            print("You already guessed the letter '{}', try again.".format(char))
+            print("Whoops you already guessed the letter '{}', try again.".format(char))
             continue
 
         guesses.append(char)
