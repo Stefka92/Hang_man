@@ -109,6 +109,11 @@ def hangman(words):
                 print("The hint has already been used.")
                 continue
 
+        if len(char) > 1:
+            print("Incorrect word try again")
+            wrong += 1
+            continue
+
         if char == words: # if you guess the correct word
             print("congratulations! You guessed correctly")
             win = True
