@@ -100,7 +100,7 @@ def hangman(words):
     hint_used = False
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
-        msg = (Fore.RED + "Please guess a letter, type 'hint' for a hint, or guess the word: "+ Style.RESET_ALL)
+        msg = (Fore.YELLOW + "Please guess a letter, type 'hint' for a hint, or guess the word: "+ Style.RESET_ALL)
         char = input(msg)   # getting the guessed letter as a input
 
         if char == "hint": # provides a hint to the user
@@ -144,7 +144,7 @@ def hangman(words):
             wrong += 1   # update the wrong value by 1 
         print((" ".join(board)))
         print("Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1))   # printing the attempts remaining
-        print("Previous Guesses: {}".format(guesses))  # displaying the Previous guesses by the user 
+        print(Fore.RED +"Previous Guesses: {}".format(guesses)+ Style.RESET_ALL)  # displaying the Previous guesses by the user 
         e = wrong + 1
         print("\n".join(stages[0: e]))
         if "_" not in board and wrong < len(stages) -1:  # if _ is not in board and number of attemps not exceeded
