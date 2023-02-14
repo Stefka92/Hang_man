@@ -3,6 +3,10 @@ importing the random words from words.py file
 """
 import random
 from words import words
+import colorama
+from colorama import Fore, Style
+
+colorama.just_fix_windows_console()
 
 
 def create_username():
@@ -96,7 +100,7 @@ def hangman(words):
     hint_used = False
     while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
         print("\n")
-        msg = "Please guess a letter, type 'hint' for a hint, or guess the word: "  # asking the user to guess a letter 
+        msg = (Fore.RED + "Please guess a letter, type 'hint' for a hint, or guess the word: "+ Style.RESET_ALL)
         char = input(msg)   # getting the guessed letter as a input
 
         if char == "hint": # provides a hint to the user
