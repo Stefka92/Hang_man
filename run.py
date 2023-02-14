@@ -148,5 +148,21 @@ def hangman(words):
         print("You lose! It was {}.".format(words))
 
 
+def play_again():
+    """
+    Asks the user if they want to play again
+    """
+    response = input("Would to play again? (yes/no) ").lower()
+    if response == "yes":
+        hangman(words)
+    elif response == "no":
+        print("Thanks for playing!Come back soon")
+        exit()
+    else:
+        print("Invalid input. Please enter 'yes' or 'no'.")
+        play_again()
+
+
 words = random.choice(words)
 hangman(words)
+play_again()
