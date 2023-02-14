@@ -9,7 +9,7 @@ def create_username():
     """
     allows user to create a username
     """
-    return input("Enter your name:").lower()
+    return input("Enter your username:").lower()
 
 
 username = create_username()
