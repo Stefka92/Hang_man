@@ -9,9 +9,7 @@ def create_username():
     """
     allows user to create a username
     """
-    name = input("Enter your name: ")
-    username = name.lower() 
-    return username
+    return input("Enter your name:").lower()
 
 
 username = create_username()
@@ -89,7 +87,7 @@ def hangman(words):
 =========
 """
      ]
-    
+ 
     rletters = list(words)
     board = ["_"] * len(words)
     win = False
@@ -140,7 +138,7 @@ def hangman(words):
         print("Previous Guesses: {}".format(guesses))  # displaying the Previous guesses by the user 
         e = wrong + 1
         print("\n".join(stages[0: e]))
-        if "_" not in board:  # if _ is not in board then print 
+        if "_" not in board and wrong < len(stages) -1:  # if _ is not in board and number of attemps not exceeded
             print("You win!")  # telling to the user that they won 
             print(" ".join(board))
             win = True
@@ -152,5 +150,3 @@ def hangman(words):
 
 words = random.choice(words)
 hangman(words)
-print(username)
-    
