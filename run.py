@@ -143,7 +143,7 @@ def hangman(words):
         else:  # if the character is not in the rletters then 
             wrong += 1   # update the wrong value by 1 
         print((" ".join(board)))
-        print("Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1))   # printing the attempts remaining
+        print(Fore.BLUE + "Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1) + Style.RESET_ALL)   # printing the attempts remaining
         print(Fore.RED + "Previous Guesses: {}".format(guesses) + Style.RESET_ALL)  # displaying the Previous guesses by the user 
         e = wrong + 1
         print("\n".join(stages[0: e]))
