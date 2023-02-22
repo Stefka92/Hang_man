@@ -8,25 +8,7 @@ from colorama import Fore, Style
 
 colorama.just_fix_windows_console()
 
-
-def create_username():
-    """
-    allows user to create a username
-    """
-    return input("Enter your username:").lower()
-
-
-username = create_username()
-print("Welcome:", username)
-
-
-def hangman(words):
-    """
-    declaring the function hangman and passing word as a argument
-    """
-
-    wrong = 0  # declaring wrong and settingas 0
-    stages = [
+stages = [
         """
  +----+
  |    |
@@ -91,7 +73,25 @@ def hangman(words):
 =========
 """
      ]
- 
+
+
+def create_username():
+    """
+    allows user to create a username
+    """
+    return input("Enter your username:").lower()
+
+
+username = create_username()
+print("Welcome:", username)
+
+
+def hangman(words, stages):
+    """
+    declaring the function hangman and passing word as a argument
+    """
+
+    wrong = 0  # declaring wrong and settingas 0
     rletters = list(words)
     board = ["_"] * len(words)
     win = False
@@ -163,7 +163,7 @@ def play_again():
     """
     response = input("Would to play again? (yes/no) ").lower()
     if response == "yes":
-        hangman(words)
+        hangman(words, stages)
     elif response == "no":
         print("Thanks for playing!Come back soon")
         exit()
@@ -173,5 +173,5 @@ def play_again():
 
 
 words = random.choice(words)
-hangman(words)
+hangman(words, stages)
 play_again()
