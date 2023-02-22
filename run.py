@@ -60,7 +60,7 @@ stages = [
  |    |
  X    |
 /|\\  |
-/ \\   |
+/ \\  |
       |
 =========
     """
@@ -95,9 +95,12 @@ def hangman(words, stages):
         e = wrong + 1
         print("\n".join(stages[0: e]))
         print((" ".join(board)))
-        print(Fore.BLUE + "Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1) + Style.RESET_ALL)   # printing the attempts remaining
-        print(Fore.RED + "Previous Guesses: {}".format(guesses) + Style.RESET_ALL)
-        msg = (Fore.YELLOW + "Guess a letter,hint, or word: " + Style.RESET_ALL)
+        print(Fore.BLUE + "Attempts remaining: {}/{}".format(
+         len(stages) - 1 - wrong, len(stages) - 1) + Style.RESET_ALL)
+        print(Fore.RED + "Previous Guesses:{}".format(
+         guesses
+        ) + Style.RESET_ALL)
+        msg = (Fore.YELLOW + "Guess a letter,hint, or word:" + Style.RESET_ALL)
         char = input(msg)   # getting the guessed letter as a input
 
         if char == "hint":  # provides a hint to the user
@@ -138,14 +141,14 @@ def hangman(words, stages):
             continue
 
         guesses.append(char)
-        if char in rletters:  
+        if char in rletters:
             cinds = [i for i, letter in enumerate(rletters) if letter == char]
         else:
             cinds = []
         for cind in cinds:
             board[cind] = char
             rletters[cind] = '$'
-        else: 
+        else:
             wrong += 1
         if "_" not in board and wrong < len(stages) - 1:
             print("You win!")  # telling to the user that they won
