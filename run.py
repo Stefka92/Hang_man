@@ -10,7 +10,7 @@ from words import words
 colorama.just_fix_windows_console()
 
 stages = [
-        """
+    """
  +----+
  |    |
  O    |
@@ -19,7 +19,7 @@ stages = [
       |
 =========
      """,
-     """
+    """
  +----+
  |    |
  O    |
@@ -41,7 +41,7 @@ stages = [
  +----+
  |    |
  O    |
-/|\\   |
+/|\\  |
       |
       |
 =========
@@ -50,7 +50,7 @@ stages = [
  +----+
  |    |
  O    |
-/|\\   |
+/|\\  |
 /     |
       |
 =========
@@ -64,7 +64,7 @@ stages = [
       |
 =========
     """
-     ]
+]
 
 
 def create_username():
