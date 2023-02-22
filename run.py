@@ -12,15 +12,6 @@ stages = [
         """
  +----+
  |    |
-      |
-      |
-      |
-      |
-=========
-""",
-"""
- +----+
- |    |
  O    |
       |
       |
@@ -66,14 +57,13 @@ stages = [
 """
  +----+
  |    |
- O    |
+ X    |
 /|\   |
 / \   |
       |
 =========
 """
      ]
-
 
 def create_username():
     """
@@ -98,7 +88,7 @@ def hangman(words, stages):
     print("Welcome to Hangman, My life depends on you...\n")   # displaying the message to the user 
     guesses = []
     hint_used = False
-    while wrong < len(stages) - 1:   # if the user guess is less than -1 then 
+    while wrong < len(stages):   # if the user guess is less than -1 then 
         print("\n")
         msg = (Fore.YELLOW + "Please guess a letter, type 'hint' for a hint, or guess the word: " + Style.RESET_ALL)
         char = input(msg)   # getting the guessed letter as a input
