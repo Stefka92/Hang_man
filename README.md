@@ -21,19 +21,19 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
 ### Existing Features
 
 
-**allowing user to pick username**
+**allowing user to pick username, showing attempts remaining in blue, previous guesses in red and providing an output to the user in yellow font**
 
 ![](assets/images/pic2.png)
 
-**Invalid input only accepts letters**
+**Invalid input message as it only accepts letters**
 
 ![](assets/images/ivalidinput.png)
 
-**HINT**
+**Providing one HINT per game**
 
 ![](assets/images/hint.png)
 
-**HINT USED**
+**Retyping HINT after it has been used and getting back a message stating the hint has been used**
 
 ![](assets/images/hintused.png)
  
@@ -45,11 +45,11 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
 
 ![](assets/images/incorrecrtword.png)
 
-**you lose, correct word is printed out and full hangman image is shown**
+**You lose, correct word is printed out and full hangman image is shown**
 
 ![](assets/images/youlose.png)
 
-**option to play again. yes option restarts, no option prints a message to the user**
+**Option to play again. yes option restarts, no option prints a message to the user**
 
 ![](assets/images/yes.png)
 
@@ -59,18 +59,24 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
 
 ### Future Features
 
+**Different difficulty levels**
+I would like to add a function that allows the user to pick between easy, medium or hard.
+
+**Scoreboard**
+I would like to add a feature that allows users to view high scores.
 
 
 ## Technology Used
 
-Languages
-Python.
-Libraries
-random to select a random word.
-color 
+**Languages** - Python.
 
+**Libraries**
 
-[Git](https://git-scm.com/) - For version control.
+[random](https://www.thewordfinder.com/random-word-generator/?msclkid=d948c7d79c351dcc5c07a434482ab5e2) - to select random words.
+
+[colorama](https://pypi.org/project/colorama/) - to change the output font colour.
+
+[freemonogrammaker](https://make.freemonogrammaker.com/bubble-letters-generator/) - to make the hangman bubble writing for this readme.
 
 [Github](https://github.com/) - To save and store the project files for the website.
 
