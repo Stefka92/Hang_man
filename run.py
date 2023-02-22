@@ -17,8 +17,8 @@ stages = [
       |
       |
 =========
-""",
-"""
+    """,
+    """
  +----+
  |    |
  O    |
@@ -26,8 +26,8 @@ stages = [
       |
       |
 =========
-""",
-"""
+    """,
+    """
  +----+
  |    |
  O    |
@@ -35,8 +35,8 @@ stages = [
       |
       |
 =========
-""",
-"""
+    """,
+    """
  +----+
  |    |
  O    |
@@ -44,8 +44,8 @@ stages = [
       |
       |
 =========
-""",
-"""
+    """,
+    """
  +----+
  |    |
  O    |
@@ -53,8 +53,8 @@ stages = [
 /     |
       |
 =========
-""",
-"""
+    """,
+    """
  +----+
  |    |
  X    |
@@ -62,7 +62,7 @@ stages = [
 / \   |
       |
 =========
-"""
+    """
      ]
 
 def create_username():
@@ -85,7 +85,7 @@ def hangman(words, stages):
     rletters = list(words)
     board = ["_"] * len(words)
     win = False
-    print("Welcome to Hangman, My life depends on you...\n")   # displaying the message to the user 
+    print("Welcome to Hangman, My life depends on you...\n")  
     guesses = []
     hint_used = False
     while wrong < len(stages):   # if the user guess is less than -1 then 
@@ -113,8 +113,12 @@ def hangman(words, stages):
             wrong += 1
             continue
 
-        if char == words:  # if you guess the correct word
-            print("congratulations! You guessed correctly")
+        if set(board) == set(words):
+            print("Congratulations! You guessed the word {}!".format(words))
+            win = True
+            break
+        elif char == words:
+            print("Congratulations! You guessed the word {}!".format(words))
             win = True
             break
 
@@ -132,7 +136,8 @@ def hangman(words, stages):
 
         guesses.append(char)
         if char in rletters:  # if the character in the rletters then 
-            cind = rletters.index(char) 
+            cinds = [i for i, letter in enumerate(rletters) if letter == char]
+        for cind in cinds:
             board[cind] = char
             rletters[cind] = '$'
         else:  # if the character is not in the rletters then 
