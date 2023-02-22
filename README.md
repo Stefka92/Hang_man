@@ -158,29 +158,19 @@ If you would like to download this repository and store it locally you can do so
  
 **Code Used**
 
-- [How to create a QUIZ using Html, CSS and Javascript](https://www.youtube.com/watch?v=1ydfKDwsYbU) I Used this youtube video as a guideline for creating my quiz.
+- [CODEFATHER](https://codefather.tech/blog/hangman-game-python/) I Used this website as a guideline for creating my game.
 
-- [Build A Quiz App With JavaScript](https://www.youtube.com/watch?v=riDzcEQbX6k) I Used this youtube video as a guideline for creating my quiz.
+- [How to Code a Game of Hangman](https://www.youtube.com/watch?v=cJJTnI22IF8) I Used this youtube video as a guideline for creating my game.
 
-- [Java cheat sheet](https://htmlcheatsheet.com/js/) I used java cheat sheet when I was unsure about certain code.
+- [Python cheat sheet](https://www.pythoncheatsheet.org/cheatsheet/basics) I used python cheat sheet sheet when I was unsure about certain code.
 
  
-**Content**
-
-The Home page content was written by Stephanie McMahon. 
-
-I used [education quizzes](https://www.educationquizzes.com/ks2/music/?utm_source=bing&utm_medium=cpc&utm_campaign=EQ%20KS2&utm_term=quizzes%20about%20music&utm_content=Subject%20Music) for the quiz questions.
-
-**Media**
-
- - [all images throughout the website were downloaded from pexels](https://www.pexels.com/)
- - [the social media icons were taken from font awesome](https://fontawesome.com/)
  
 ## Acknowledgments
 
 I would like to acknowledge the following people who helped me in completing this project:
 - My Course Mentor Harry Dhillon for his support and guidance.
-- My friends and family for their support in continuing this project after the death of my grandmother.
+- My friends for their continued support in testing and providing feedback.
 
 Thank you for viewing my project.
 
