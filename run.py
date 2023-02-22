@@ -114,26 +114,28 @@ def hangman(words, stages):
                 continue
 
         if len(char) > 1:
-            print("Incorrect word try again")
-            wrong += 1
-            continue
+            if char == words:
+                print("Congratulations!You guessed the word {}!".format(words))
+                win = True
+                board = list(words)
+                break
+            else:
+                print("Incorrect word try again")
+                wrong += 1
+                continue
 
         if set(board) == set(words):
             print("Congratulations! You guessed the word {}!".format(words))
             win = True
-            break
-        elif char == words:
-            print("Congratulations! You guessed the word {}!".format(words))
-            win = True
-            board = list(words)
             break
 
         if not char.isalpha():  # if the entered char is not a letter
             print("Invalid input.Enter a single letter, the word, or 'hint'.")
             continue
 
-        if len(char) > 1 and char != words:
-            print("Invalid input. Enter a single letter, the word, or 'hint'.")
+        if len(char) > len(words):
+            print("Incorrect word. Try again.")
+            wrong += 1
             continue
 
         if char in guesses:   # if the entered char matches with the word then,
