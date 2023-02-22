@@ -2,9 +2,10 @@
 importing the random words from words.py file
 """
 import random
-from words import words
 import colorama
 from colorama import Fore, Style
+from words import words
+
 
 colorama.just_fix_windows_console()
 
@@ -17,8 +18,8 @@ stages = [
       |
       |
 =========
-    """,
-    """
+     """,
+     """
  +----+
  |    |
  O    |
@@ -40,7 +41,7 @@ stages = [
  +----+
  |    |
  O    |
-/|\   |
+/|\\   |
       |
       |
 =========
@@ -49,7 +50,7 @@ stages = [
  +----+
  |    |
  O    |
-/|\   |
+/|\\   |
 /     |
       |
 =========
@@ -58,12 +59,13 @@ stages = [
  +----+
  |    |
  X    |
-/|\   |
-/ \   |
+/|\\  |
+/ \\   |
       |
 =========
     """
      ]
+
 
 def create_username():
     """
@@ -85,23 +87,23 @@ def hangman(words, stages):
     rletters = list(words)
     board = ["_"] * len(words)
     win = False
-    print("Welcome to Hangman, My life depends on you...\n")  
+    print("Welcome to Hangman, My life depends on you...\n")
     guesses = []
     hint_used = False
-    while wrong < len(stages):   # if the user guess is less than -1 then 
+    while wrong < len(stages):   # if the user guess is less than -1 then
         print("\n")
         e = wrong + 1
         print("\n".join(stages[0: e]))
         print((" ".join(board)))
         print(Fore.BLUE + "Attempts remaining: {}/{}".format(len(stages) - 1 - wrong, len(stages) - 1) + Style.RESET_ALL)   # printing the attempts remaining
-        print(Fore.RED + "Previous Guesses: {}".format(guesses) + Style.RESET_ALL)  # displaying the Previous guesses by the user 
-        msg = (Fore.YELLOW + "Please guess a letter, type 'hint' for a hint, or guess the word: " + Style.RESET_ALL)
+        print(Fore.RED + "Previous Guesses: {}".format(guesses) + Style.RESET_ALL)
+        msg = (Fore.YELLOW + "Guess a letter,hint, or word: " + Style.RESET_ALL)
         char = input(msg)   # getting the guessed letter as a input
 
         if char == "hint":  # provides a hint to the user
             if not hint_used:
-                hint = [l for l in rletters if l not in guesses]
-                print("Here's a hint: one of the letters not yet guessed is '{}'".format(hint[0]))
+                hint = [la for la in rletters if la not in guesses]
+                print("hint:A letter not yet guessed is'{}'".format(hint[0]))
                 hint_used = True
                 continue
             else:
@@ -120,37 +122,40 @@ def hangman(words, stages):
         elif char == words:
             print("Congratulations! You guessed the word {}!".format(words))
             win = True
+            board = list(words)
             break
 
         if not char.isalpha():  # if the entered char is not a letter
-            print("Invalid input. Please enter a single letter, the word, or 'hint'.")
+            print("Invalid input.Enter a single letter, the word, or 'hint'.")
             continue
 
         if len(char) > 1 and char != words:
-            print("Invalid input. Please enter a single letter, the word, or 'hint'.")
+            print("Invalid input. Enter a single letter, the word, or 'hint'.")
             continue
 
-        if char in guesses:   # if the entered char matches with the word then, 
-            print("Whoops you already guessed the letter '{}', try again.".format(char))
+        if char in guesses:   # if the entered char matches with the word then,
+            print("You already guessed the letter '{}',try again".format(char))
             continue
 
         guesses.append(char)
-        if char in rletters:  # if the character in the rletters then 
+        if char in rletters:  
             cinds = [i for i, letter in enumerate(rletters) if letter == char]
+        else:
+            cinds = []
         for cind in cinds:
             board[cind] = char
             rletters[cind] = '$'
-        else:  # if the character is not in the rletters then 
-            wrong += 1   # update the wrong value by 1 
-    
-        if "_" not in board and wrong < len(stages) - 1:  # if _ is not in board and number of attemps not exceeded
-            print("You win!")  # telling to the user that they won 
+        else: 
+            wrong += 1
+        if "_" not in board and wrong < len(stages) - 1:
+            print("You win!")  # telling to the user that they won
             print(" ".join(board))
             win = True
             break
-    if not win:  # if out of guesses show correct answer 
-        print("\n".join(stages[0: wrong]))
-        print("You lose! The word was {}.".format(words))
+
+        if not win:  # if out of guesses show correct answer
+            print("\n".join(stages[0: wrong]))
+            print("You lose! The word was {}.".format(words))
 
 
 def play_again():
