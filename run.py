@@ -158,9 +158,9 @@ def hangman(words, stages):
             win = True
             break
 
-        if not win:  # if out of guesses show correct answer
-            print("\n".join(stages[0: wrong]))
-            print("You lose! The word was {}.".format(words))
+    if not win:  # if out of guesses show correct answer
+        print("\n".join(stages[0: wrong]))
+        print("You lose! The word was {}.".format(words))
 
 
 def play_again():
