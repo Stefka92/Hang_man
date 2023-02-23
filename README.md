@@ -21,7 +21,7 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
 ### Existing Features
 
 
-**allowing user to pick username, showing attempts remaining in blue, previous guesses in red and providing an output to the user in yellow font**
+**Allowing user to pick a username, showing attempts remaining in blue, previous guesses in red and providing an output to the user in yellow font**
 
 ![](assets/images/pic2.png)
 
@@ -80,20 +80,37 @@ I would like to add a feature that allows users to view high scores.
 
 [Github](https://github.com/) - To save and store the project files for the game.
 
+[Git](https://git-scm.com/) - Used to code and backup all of my code.
+
 [Heroku](https://gitpod.io/workspaces) - Used to deploy the website.
 
-Bugs
-Fixed Bugs
+### Bugs 
+
+**Fixed Bugs**
+
 Bug: When guessing the wrong word, it was showing up inncorect input.
+
 Fix: Changed the if statment to if charachters entered was greater than one the terminal would know the user was trying to guess the word.
+
 Bug: When testing hangman graphics, the last part of the leg was not showing up.
+
 Fix: Replaced \ with double \\ as I belive the terminal was picking it up as a special character.
+
 Bug: When printing the stages of the hangman to the terminal the print statments were being displayed above the image which made the user scroll up.
+
 Fix: moved the position of the print statements within the hangman function.
+
 Bug: IF 2 of the same charachters were in the word if wouldnt pick this up.
+
 Fix: I had to move the updating the board list inside the if char in rletters as I had it outside of this function.
+
 Bug: Error messages stating lines were too long.
-Fix:I Split these lines up into seperate lines..
+
+Fix:I Split these lines up into seperate lines.
+
+**Currently One noticable bug remaining**
+
+bug: When a letter is guessed correctly the stages of the hangman still seem to be printed to the terminal.
 
 
 ## Testing
@@ -118,22 +135,66 @@ I have manually tested the project by doing the following:
 4.I sent it to several friends to test out and send feedback. 
 
 ![](assets/images/Sfeedback.png)
+
+*I took into account the expectations of a user and what I wanted the project to do:*
+
+1.An introduction to the game and to create a username
+
+2.Clear information how what to do within the terminal
+
+3.Fun to Play and appealing to the user
+
+*Results*
+
+As a user I was able to:
+
+1.Be introduced to the Game & Enter a unique username
+
+2.The information provided to the user was clear
+
+3.Different font colours were provided to make it more appealing and clear to understand, I believe it was fun to play.
+
+
  
 ### Deployment
 The project was deployed using Code Institutes mock terminal for Heroku.
+
 I followed the below steps using the Code Institute tutorial:
-- Fork or clone this repository.
-Ensure the Procfile is in place.
-add any external liberie useds to requirements.txt.
-Create a new app in Heroku.
-Select "New" and "Create new app".
-Name the new app and click "Create new app".
-In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list).
-Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files.
-Click on "Deploy" and select your deploy method and repository.
-Click "Connect" on selected repository.
-Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
-Heroku will now deploy the site.
+
+- Add any external liberies useds to requirements.txt.
+
+- Create a new app in Heroku.
+
+- Add project name & Changed Region to relevant country.
+
+- Select "New" and "Create new app".
+
+- In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list).
+
+- Within "Settings", click "Reveal Config Vars" and input Check config var add PORT & 8000 as I did not have any confidential files this was all that was needed.
+
+- Click on "Deploy" and select your deploy method and repository.
+
+- Click "Connect" on selected repository.
+
+- Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
+
+- Heroku will now deploy the site.
+
+ **How to clone**
+If you would like to download this repository and store it locally you can do so by cloning it
+
+1.Click the GitHub repository.
+
+2.Click on the drop down arrow on the Code button located on the top right.
+
+3.Select and copy the link that appears.
+
+4.Open Gitpod & select the location where you would like the clone to be saved.
+
+5.In the terminal type 'git clone' and paste the link.
+
+6.Press enter to create your local clone.
 
  ## Credits
  
@@ -144,6 +205,7 @@ Heroku will now deploy the site.
 - [How to Code a Game of Hangman](https://www.youtube.com/watch?v=cJJTnI22IF8) I Used this youtube video as a guideline for creating my game.
 
 - [Python cheat sheet](https://www.pythoncheatsheet.org/cheatsheet/basics) I used python cheat sheet sheet when I was unsure about certain code.
+- Code institute for providing me with a template.
 
  
  
