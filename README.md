@@ -41,15 +41,15 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
  
 ![](assets/images/previousguesses.png)
 
-**Incorrect word guessed try again**
+**Incorrect word will not be accepted**
 
 ![](assets/images/incorrecrtword.png)
 
-**You lose, correct word is printed out and full hangman image is shown**
+**Game breaks if user runs out of lives, correct word is printed out and full hangman image is shown**
 
 ![](assets/images/youlose.png)
 
-**Option to play again. yes option restarts, no option prints a message to the user**
+** Give user the option to play again. yes option restarts, no option prints a message to the user**
 
 ![](assets/images/yes.png)
 
@@ -78,24 +78,22 @@ I would like to add a feature that allows users to view high scores.
 
 [freemonogrammaker](https://make.freemonogrammaker.com/bubble-letters-generator/) - to make the hangman bubble writing for this readme.
 
-[Github](https://github.com/) - To save and store the project files for the website.
+[Github](https://github.com/) - To save and store the project files for the game.
 
-[Gitpod](https://gitpod.io/workspaces) - Used to deploy the website.
+[Heroku](https://gitpod.io/workspaces) - Used to deploy the website.
 
 Bugs
 Fixed Bugs
-Bug: When implementing hangman graphics, lives left did not correspond to amount of stages left in hangman.
-Fix: Due to lists iterating from 0, set lives displayed to user as lives + 1 and also adjusted the game over setting for lives >=0
-Bug: When testing hangman graphics, the bottom graphic was shifted over to the right.
-Fix: Replaced \ with double \\ make \ print to the terminal.
-Bug: When on last life, letters guessed and amount of lives fail to show on terminal.
-Fix: Set lives to lives >=0 at end of while loop to ensure messages display correctly.
-Bug: Hangman graphic not displaying on game over.
-Fix: Add in additional stage of hangman graphic. Remove lives + 1 from script, set game over criteria back lives > 0. A more elgant fix for the problem above.
-Bug: When selecting view rules. After returning to the main window, if you selected play game it would go to the difficulty menu
-Fix: Called main() in game rules rather that initialise_game()
-Bug: Error message too long causing last letter to wrap to following line.
-Fix: Split up error string and put "Please try again" to a new line.
+Bug: When guessing the wrong word, it was showing up inncorect input.
+Fix: Changed the if statment to if charachters entered was greater than one the terminal would know the user was trying to guess the word.
+Bug: When testing hangman graphics, the last part of the leg was not showing up.
+Fix: Replaced \ with double \\ as I belive the terminal was picking it up as a special character.
+Bug: When printing the stages of the hangman to the terminal the print statments were being displayed above the image which made the user scroll up.
+Fix: moved the position of the print statements within the hangman function.
+Bug: IF 2 of the same charachters were in the word if wouldnt pick this up.
+Fix: I had to move the updating the board list inside the if char in rletters as I had it outside of this function.
+Bug: Error messages stating lines were too long.
+Fix:I Split these lines up into seperate lines..
 
 
 ## Testing
@@ -124,9 +122,9 @@ I have manually tested the project by doing the following:
 ### Deployment
 The project was deployed using Code Institutes mock terminal for Heroku.
 I followed the below steps using the Code Institute tutorial:
-Fork or clone this repository.
+- Fork or clone this repository.
 Ensure the Procfile is in place.
-requirements.txt can be left empty as this project does not use any external libraries.
+add any external liberie useds to requirements.txt.
 Create a new app in Heroku.
 Select "New" and "Create new app".
 Name the new app and click "Create new app".
@@ -136,23 +134,6 @@ Click on "Deploy" and select your deploy method and repository.
 Click "Connect" on selected repository.
 Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
 Heroku will now deploy the site.
-
-
-**How to Fork**
-If you would like to make changes to this repositiry without affecting the original you can do so by making a copy.
-1. Click the GitHub repository you wish to fork.
-2. Click on the fork button located in the top right hand corner.
-
- **How to clone**
-If you would like to download this repository and store it locally you can do so by cloning it
-1.Click the GitHub repository.
-2.Click on the drop down arrow on the Code button located on the top right.
-3.Select and copy the link that appears.
-4.Open Gitpod & select the location where you would like the clone to be saved.
-5.In the terminal type 'git clone' and paste the link.
-6.Press enter to create your local clone.
-
- 
 
  ## Credits
  
