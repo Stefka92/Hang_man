@@ -15,6 +15,13 @@ Hangman is a classic word-guessing game where one player thinks of a word and th
 
 - The game continues until the user guesses the entire word, or the hangman figure is completed.
 
+## Flowchart
+
+I created the following flowchart during the planning process as a basic guideline to follow when coding my project.
+
+![flowchart](assets/images/flow.png)
+
+
 
 ## Features
 
