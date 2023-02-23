@@ -143,6 +143,11 @@ I have manually tested the project by doing the following:
 
 ![](assets/images/Sfeedback.png)
 
+5.Lighthouse testing
+
+![](assets/images/lighthouse.png)
+
+
 *I took into account the expectations of a user and what I wanted the project to do:*
 
 1.An introduction to the game and to create a username
