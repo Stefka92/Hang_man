@@ -93,7 +93,8 @@ def hangman(words, stages):
     while wrong < len(stages):   # if the user guess is less than -1 then
         print("\n")
         e = wrong + 1
-        print("\n".join(stages[0: e]))
+        if e < len(stages):
+            print("\n".join(stages[0: e]))
         print((" ".join(board)))
         print(Fore.BLUE + "Attempts remaining: {}/{}".format(
          len(stages) - 1 - wrong, len(stages) - 1) + Style.RESET_ALL)
@@ -135,7 +136,8 @@ def hangman(words, stages):
 
         if len(char) > len(words):
             print("Incorrect word. Try again.")
-            wrong += 1
+            if wrong < len(stages) - 1:
+                wrong += 1
             continue
 
         if char in guesses:   # if the entered char matches with the word then,
@@ -151,7 +153,10 @@ def hangman(words, stages):
             board[cind] = char
             rletters[cind] = '$'
         else:
-            wrong += 1
+            if char not in words:
+                wrong += 1
+                print("wrong guess!The letter '{}' is not in the word.".format(char))
+       
         if "_" not in board and wrong < len(stages) - 1:
             print("You win!")  # telling to the user that they won
             print(" ".join(board))
