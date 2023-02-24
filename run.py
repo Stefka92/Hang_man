@@ -155,7 +155,7 @@ def hangman(words, stages):
         else:
             if char not in words:
                 wrong += 1
-                print("wrong guess!The letter '{}' is not in the word.".format(char))
+                print(f"wrong guess! The letter '{char}' is not in the word.")
        
         if "_" not in board and wrong < len(stages) - 1:
             print("You win!")  # telling to the user that they won
@@ -172,7 +172,7 @@ def play_again():
     """
     Asks the user if they want to play again
     """
-    response = input("Would to play again? (yes/no) ").lower()
+    response = input("Would you like to play again? (yes/no) ").lower()
     if response == "yes":
         hangman(words, stages)
     elif response == "no":
