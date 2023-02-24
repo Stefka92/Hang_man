@@ -117,7 +117,7 @@ Fix:I Split these lines up into seperate lines.
 
 **Currently One noticable bug remaining**
 
-bug: When a letter is guessed correctly the stages of the hangman still seem to be printed to the terminal.
+bug: The user can guess one more time even after it says all guesses have been used.
 
 
 ## Testing
